@@ -8,6 +8,8 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="css/app.css">
     <!-- Scripts -->
+    <script async src="./js/modules/jutils.js"></script>
+    <script async src="./js/modules/profile.js"></script>
     <script async src="./js/app.js"></script>
     <!-- Importaciones Externas -->
     <!-- AOS Library -->
@@ -47,8 +49,57 @@
                     </div>
                 </div>
                 <div class="app_main_screen">
-                    <section id="app-mainsection-profile">
-                        perfil
+                    <section id="app-mainsection-profile" class="app_mainsection_profile">
+                        <h2>Perfil <span id="app-profile-profileTitle"></span></h2>
+                        <form action="">
+                            <div>
+                                <label for="form-nombre" class="form-label">Nombre</label>
+                                <input type="text" id="form-nombre" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-apellidos" class="form-label">Apellidos</label>
+                                <input type="text" id="form-apellidos" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-pais" class="form-label">Pais</label>
+                                <input type="text" id="form-pais" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-ciudad" class="form-label">Ciudad</label>
+                                <input type="text" id="form-ciudad" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-direccion" class="form-label">Dirección</label>
+                                <input type="text" id="form-direccion" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-cel" class="form-label">Cel</label>
+                                <input type="text" id="form-cel" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-email" class="form-label">Email</label>
+                                <input type="text" id="form-email" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-clave" class="form-label">Clave</label>
+                                <input type="text" id="form-clave" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-tipo-documento" class="form-label">Tipo Documento</label>
+                                <input type="text" id="form-tipo-documento" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-documento" class="form-label">Documento</label>
+                                <input type="text" id="form-documento" class="form-control">
+                            </div>
+                            <div>
+                                <label for="form-tipo-cliente" class="form-label">Tipo Cliente</label>
+                                <input type="text" id="form-tipo-cliente" class="form-control">
+                            </div>
+                        </form>
+                        <div class="app_profile_saveButton" id="form-sendButton">
+                            <i class='bx bx-save'></i>
+                        </div>
                     </section>
                     <section id="app-mainsection-products">
                         Productos

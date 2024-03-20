@@ -1,11 +1,11 @@
 // ***** FUNCIONES GENERALES - INICIO ****
 
-// Variable que contendrá al objeto JStorage para usar LocalStorage con propósitos de experiencia de usuario.
-let JStorage;
+// Variable que contendrá al objeto BlueStorage para usar LocalStorage con propósitos de experiencia de usuario.
+let BlueStorage;
 
 //Función para configurar localStorage.
 window.onload = (()=>{
-    // JUtils.methods.setJStorage();
+    JUtils.methods.setBlueStorage();
 });
 
 
@@ -51,15 +51,16 @@ const Login =
 
                 console.log(data);
                 
-                console.log(data.email);
-                console.log(data.clave);
                 if(data.email && data.clave){
                     
                     Login.elements.loginApprovation = true;
-                    JStorage.loginApprovation = true;
-                    JStorage.usuarioSesion = data[0];
-                    JStorage.currentWindow = "japp-dashboard-home";
-                    // JUtils.methods.saveJStorage(JStorage)
+                    BlueStorage.loginApprovation = true;
+                    BlueStorage.usuarioSesion = data;
+                    // BlueStorage.currentWindow = "japp-dashboard-home";
+                    console.log("blueStorage", BlueStorage);
+                    JUtils.methods.saveBlueStorage(BlueStorage);
+                    
+                    console.log("blueStorage");
 
                     console.log("Login Finalizado con éxito");
                     return data;
@@ -77,6 +78,8 @@ const Login =
                 
             })
             .catch((err)=>{
+                Login.elements.loginApprovation = false;
+
                 console.error(err);
                 swal.fire({
                     title : "Acceso Denegado",
@@ -99,23 +102,23 @@ const Login =
                 html : `
                 <form action="" class="jlogin_register_form">
                     <div class="form-nombre" class>
-                        <label for="form-nombre" class="form-label">Nombre</label>
-                        <input type="text" id="form-nombre" class="form-control">
+                        <label for="login-form-nombre" class="form-label">Nombre</label>
+                        <input type="text" id="login-form-nombre" class="form-control">
                     </div>
                     <div class="form-apellidos" class>
-                        <label for="form-apellidos" class="form-label">Apellidos</label>
-                        <input type="text" id="form-apellidos" class="form-control">
+                        <label for="login-form-apellidos" class="form-label">Apellidos</label>
+                        <input type="text" id="login-form-apellidos" class="form-control">
                     </div>
                     <div class="form-pais" class>
-                        <label for="form-pais" class="form-label">Pais</label>
-                        <select id="form-pais" class="form-control">
+                        <label for="login-form-pais" class="form-label">Pais</label>
+                        <select id="login-form-pais" class="form-control">
                             <option value="colombia">Colombia</option>
                             <option value="usa">USA</option>
                         </select>
                     </div>
                     <div class="form-ciudad" class>
-                        <label for="form-ciudad" class="form-label">Ciudad</label>
-                        <select id="form-ciudad" class="form-control">
+                        <label for="login-form-ciudad" class="form-label">Ciudad</label>
+                        <select id="login-form-ciudad" class="form-control">
                             <option value="medellin">Medellín</option>
                             <option value="bogota">Bogotá</option>
                             <option value="cali">Cali</option>
@@ -123,36 +126,36 @@ const Login =
                         </select>
                     </div>
                     <div class="form-direccion" class>
-                        <label for="form-direccion" class="form-label">Direccion</label>
-                        <input type="text" id="form-direccion" class="form-control">
+                        <label for="login-form-direccion" class="form-label">Direccion</label>
+                        <input type="text" id="login-form-direccion" class="form-control">
                     </div>
                     <div class="form-cel" class>
-                        <label for="form-cel" class="form-label">Cel</label>
-                        <input type="text" id="form-cel" class="form-control">
+                        <label for="login-form-cel" class="form-label">Cel</label>
+                        <input type="text" id="login-form-cel" class="form-control">
                     </div>
                     <div class="form-email" class>
-                        <label for="form-email" class="form-label">Email</label>
-                        <input type="email" id="form-email" class="form-control">
+                        <label for="login-form-email" class="form-label">Email</label>
+                        <input type="email" id="login-form-email" class="form-control">
                     </div>
                     <div class="form-clave" class>
-                        <label for="form-clave" class="form-label">Clave</label>
-                        <input type="text" id="form-clave" class="form-control" min="4" max="4">
+                        <label for="login-form-clave" class="form-label">Clave</label>
+                        <input type="text" id="login-form-clave" class="form-control" min="4" max="4">
                     </div>
                     <div class="form_tipo_documento" class>
-                        <label for="form-tipo-documento" class="form-label">Tipo Documento</label>
-                        <select id="form-tipo-documento" class="form-control">
+                        <label for="login-form-tipo-documento" class="form-label">Tipo Documento</label>
+                        <select id="login-form-tipo-documento" class="form-control">
                             <option value="cc">Cédula</option>
                             <option value="pp">Pasaporte</option>
                             <option value="nit">NIT</option>
                         </select>
                     </div>
                     <div class="form_documento" class>
-                        <label for="form-documento" class="form-label">Documento</label>
-                        <input type="text" id="form-documento" class="form-control">
+                        <label for="login-form-documento" class="form-label">Documento</label>
+                        <input type="text" id="login-form-documento" class="form-control">
                     </div>
                     <div class="form_tipo_cliente" class>
-                        <label for="form-tipo-cliente" class="form-label">Tipo Cliente</label>
-                        <select id="form-tipo-cliente" class="form-control">
+                        <label for="login-form-tipo-cliente" class="form-label">Tipo Cliente</label>
+                        <select id="login-form-tipo-cliente" class="form-control">
                             <option value="persona_natural">Persona Natural</option>
                             <option value="persona_juridica">Persona Jurídica</option>
                         </select>
@@ -168,17 +171,17 @@ const Login =
                 try {
                     if(result.isConfirmed){
                     
-                        const nombre = document.getElementById('form-nombre');
-                        const apellidos = document.getElementById('form-apellidos');
-                        const pais = document.getElementById('form-pais');
-                        const ciudad = document.getElementById('form-ciudad');
-                        const direccion = document.getElementById('form-direccion');
-                        const cel = document.getElementById('form-cel');
-                        const email = document.getElementById('form-email');
-                        const clave = document.getElementById('form-clave');
-                        const tipoDocumento = document.getElementById('form-tipo-documento');
-                        const documento = document.getElementById('form-documento');
-                        const tipoCliente = document.getElementById('form-tipo-cliente');
+                        const nombre = document.getElementById('login-form-nombre');
+                        const apellidos = document.getElementById('login-form-apellidos');
+                        const pais = document.getElementById('login-form-pais');
+                        const ciudad = document.getElementById('login-form-ciudad');
+                        const direccion = document.getElementById('login-form-direccion');
+                        const cel = document.getElementById('login-form-cel');
+                        const email = document.getElementById('login-form-email');
+                        const clave = document.getElementById('login-form-clave');
+                        const tipoDocumento = document.getElementById('login-form-tipo-documento');
+                        const documento = document.getElementById('login-form-documento');
+                        const tipoCliente = document.getElementById('login-form-tipo-cliente');
 
                         const register = {
                             "data" : {

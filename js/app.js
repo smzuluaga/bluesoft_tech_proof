@@ -1,6 +1,8 @@
+let BlueStorage;
 
 window.onload = () => {
     BluesoftBank.methods.setDate();
+    BlueStorage = JSON.parce(localStorage.getItem('BlueStorage'));
 }
 
 
@@ -12,13 +14,16 @@ const BluesoftBank = {
         documents : document.getElementById('app-mainsection-documents'),
     },
     elements : {
+        url : 'http://localhost:1337/api',
+        token : '57b45774267102906a1acb8c29932fada85139149acb75e28dd26df946d52c225f7328159cea7447da70a1392c31aa731f44f27f6a2a455b4160d1bfe2bc0733cf5dcc587bb15eee0ba3ebc5911eacf45ec8ada3ee2a1d40507ee1d4e391488132c9c8ea3dc01255bf11f721a0ef0b739be459904431c0aeb04cf37d6a1f5ac0',
         loginApprovation : false,
         date: document.getElementById('app_lateral_date'),
         buttonProfile : document.getElementById('app-lateral-profile'),
         buttonProducts : document.getElementById('app-lateral-products'),
         buttonTransactions : document.getElementById('app-lateral-transactions'),
         buttonDocuments : document.getElementById('app-lateral-documents'),
-        buttonLogout : document.getElementById('app-lateral-logout')
+        buttonLogout : document.getElementById('app-lateral-logout'),
+        profileTitle : document.getElementById('app-profile-profileTitle')
     },
     methods : {
         hideAllSections : function () {
@@ -51,6 +56,8 @@ BluesoftBank.elements.buttonProfile.addEventListener('click', () => {
         showCloseFutton : false,
         timer : 800,
     })
+
+    Profile.methods.fillForm();
 })
 
 BluesoftBank.elements.buttonProducts.addEventListener('click', () => {
