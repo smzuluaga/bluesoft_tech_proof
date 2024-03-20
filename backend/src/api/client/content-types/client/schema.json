@@ -1,0 +1,104 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 120
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true,
+      "maxLength": 125,
+      "minLength": 2
+    },
+    "pais": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "colombia",
+        "usa"
+      ]
+    },
+    "ciudad": {
+      "type": "enumeration",
+      "required": true,
+      "unique": false,
+      "enum": [
+        "medellin",
+        "bogota",
+        "cali",
+        "miami",
+        "persona_juridica"
+      ]
+    },
+    "direccion": {
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "minLength": 1
+    },
+    "tipo_documento": {
+      "type": "enumeration",
+      "enum": [
+        "cc",
+        "pp",
+        "nit"
+      ],
+      "required": true,
+      "default": "cc"
+    },
+    "documento": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 30
+    },
+    "cel": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20,
+      "minLength": 9
+    },
+    "tipo_cliente": {
+      "type": "enumeration",
+      "enum": [
+        "persona_natural",
+        "persona_juridica"
+      ],
+      "required": true,
+      "default": "persona_natural"
+    },
+    "cuentas": {
+      "type": "json",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "accounts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::account.account",
+      "mappedBy": "owner_id"
+    },
+    "clave": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

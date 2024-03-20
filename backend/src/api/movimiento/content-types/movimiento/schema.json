@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movimientos",
+  "info": {
+    "singularName": "movimiento",
+    "pluralName": "movimientos",
+    "displayName": "Movimiento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo_movimiento": {
+      "type": "enumeration",
+      "enum": [
+        "ingreso",
+        "egreso"
+      ]
+    },
+    "valor": {
+      "type": "integer",
+      "required": true
+    },
+    "ciudad": {
+      "type": "string",
+      "required": true
+    },
+    "account": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::account.account",
+      "inversedBy": "movimientos"
+    }
+  }
+}

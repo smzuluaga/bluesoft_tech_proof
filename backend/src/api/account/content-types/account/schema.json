@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "singularName": "account",
+    "pluralName": "accounts",
+    "displayName": "Account",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numero": {
+      "type": "integer"
+    },
+    "tipo_cuenta": {
+      "type": "enumeration",
+      "enum": [
+        "ahorros",
+        "corriente"
+      ],
+      "required": true,
+      "default": "ahorros"
+    },
+    "saldo": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "owner_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "accounts"
+    },
+    "movimientos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::movimiento.movimiento",
+      "mappedBy": "account"
+    }
+  }
+}
