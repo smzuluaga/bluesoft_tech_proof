@@ -247,7 +247,7 @@ Login.elements.loginButton.addEventListener('click', async (e) => {
     if(Login.elements.loginApprovation){
 
         setTimeout(()=>{
-            window.location.href = "./../app.html";
+            window.location.href = "./../frontend/app.html";
         },1500);
 
         await swal.fire({
