@@ -53,7 +53,7 @@ BluesoftBank.elements.buttonProfile.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        showCloseFutton : false,
+        showCloseButton : false,
         timer : 800,
     })
 
@@ -69,7 +69,7 @@ BluesoftBank.elements.buttonProducts.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        showCloseFutton : false,
+        showCloseButton : false,
         timer : 800,
     })
 })
@@ -83,7 +83,7 @@ BluesoftBank.elements.buttonTransactions.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        showCloseFutton : false,
+        Button : false,
         timer : 800,
     })
 })
@@ -109,7 +109,7 @@ BluesoftBank.elements.buttonLogout.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        showCloseFutton : false,
+        showCloseButton : false,
         timer : 800,
         timerProgressBar:true
         

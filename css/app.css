@@ -128,6 +128,7 @@ body{
     font-size: 30px;   
     align-self: flex-start;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .app_lateral_footer i:hover{
@@ -181,4 +182,172 @@ body{
 .app_profile_saveButton i:hover {
     font-size: 32px;
     color:  var(--hoverBlue);
+}
+
+    /* PRODUCTOS */
+
+.app_mainsection_products{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.app_mainsection_products_list{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80%;
+    gap: 30px;
+}
+
+.app_mainsection_products_list > div{
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    padding: 10px;
+}
+
+.app_mainsection_products_list > div > div{
+    box-sizing: border-box;
+    width: 95%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    gap: 15px;
+    overflow-x: scroll;
+}
+
+.app_mainsection_products_list i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.app_mainsection_products_account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: rgba(200,200,200,.5);
+    min-width: 30%;
+    height: 100% ;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    cursor: pointer;
+    
+}
+
+.app_mainsection_products_account:hover {
+    background-color: var(--hoverBlue);
+    color: whitesmoke;
+    min-width: 40%;
+    height: 90%;
+    align-self: center;
+    /* position:fixed */
+}
+
+.app_mainsection_products_list > div > div::-webkit-scrollbar {
+    width:12px;
+    height: 12px;
+}
+
+.app_mainsection_products_list > div > div::-webkit-scrollbar-track {
+    background-color: rgba(250, 250, 250, 1);
+    width:12px;
+    height: 12px;
+    border-radius: 20px;
+
+    
+}
+
+.app_mainsection_products_list > div > div::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.4);
+    width:12px;
+    height: 12px;
+
+    border-radius: 20px;
+}
+
+    /* TRANSACCIONES    */
+
+.app-mainsection-transactions-bar {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px
+}
+
+.app_mainsection_transactions_screen{
+    width: 90%;
+    height: 60%;
+    overflow: scroll;
+}
+
+.app_mainsection_transactions_screen::-webkit-scrollbar,
+.app_mainsection_documents_screen::-webkit-scrollbar {
+    width:12px;
+    height: 12px;
+}
+
+.app_mainsection_transactions_screen::-webkit-scrollbar-track,
+.app_mainsection_documents_screen::-webkit-scrollbar-track {
+    background-color: rgba(250, 250, 250, 1);
+    width:12px;
+    height: 12px;
+    border-radius: 20px;
+
+    
+}
+
+.app_mainsection_transactions_screen::-webkit-scrollbar-thumb,
+.app_mainsection_documents_screen::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.4);
+    width:12px;
+    height: 12px;
+
+    border-radius: 20px;
+}
+
+
+    /* DOCUMENTOS    */
+
+.app_mainsection_documents_bar {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px
+}
+
+
+.app_mainsection_documents_buttons{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+.app_mainsection_documents_buttons button{
+    text-decoration: none;
+    border: none;
+    width: 40%;
+    height: 30%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    border-radius: 10px;
+    color: white;
+    background-color: var(--blue);
+}
+
+.app_mainsection_documents_buttons button:hover{
+    background-color: var(--hoverBlue);
+    font-weight: 600;
+    width: 41%;
+    height: 31%;
 }
