@@ -1,0 +1,8 @@
+const Documents = {
+    elements : {
+
+    },
+    methods: {
+
+    }
+}

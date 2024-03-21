@@ -273,6 +273,32 @@ body{
     border-radius: 20px;
 }
 
+    /* FORMULARIO SOLICITUD CUENTAS */
+.app_form_accountRequest {
+    padding: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-around;
+    color: var(--blue);
+}
+
+.app_form_accountRequest input, .app_form_accountRequest select{
+    width: 150px;
+    text-align: center;
+}
+    
+.app_form_accountRequest_userInfo{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    gap:  10px;
+}
+
+
     /* TRANSACCIONES    */
 
 .app-mainsection-transactions-bar {
