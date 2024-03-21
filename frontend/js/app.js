@@ -74,12 +74,13 @@ BluesoftBank.elements.buttonProducts.addEventListener('click', () => {
         toast: true,
         showConfirmButton : false,
         showCloseButton : false,
-        timer : 800,
+        timer : 500,
     })
 })
 
 BluesoftBank.elements.buttonTransactions.addEventListener('click', () => {
 
+    Transactions.methods.renderSelectAccount();
     BluesoftBank.methods.hideAllSections();
     BluesoftBank.sections.transactions.style.display = 'flex';
     swal.fire({
@@ -88,13 +89,14 @@ BluesoftBank.elements.buttonTransactions.addEventListener('click', () => {
         toast: true,
         showConfirmButton : false,
         Button : false,
-        timer : 800,
+        timer : 500,
     })
 })
 
 
 BluesoftBank.elements.buttonMovements.addEventListener('click', () => {
 
+    Movements.methods.renderSelectAccount();
     BluesoftBank.methods.hideAllSections();
     BluesoftBank.sections.movements.style.display = 'flex';
     swal.fire({
@@ -103,12 +105,13 @@ BluesoftBank.elements.buttonMovements.addEventListener('click', () => {
         toast: true,
         showConfirmButton : false,
         Button : false,
-        timer : 800,
+        timer : 500,
     })
 })
 
 BluesoftBank.elements.buttonDocuments.addEventListener('click', () => {
 
+    Documents.methods.renderSelectAccount();
     BluesoftBank.methods.hideAllSections();
     BluesoftBank.sections.documents.style.display = 'flex';
     swal.fire({
@@ -117,7 +120,7 @@ BluesoftBank.elements.buttonDocuments.addEventListener('click', () => {
         toast: true,
         showConfirmButton : false,
         showCloseButton : false,
-        timer : 800,
+        timer : 500,
     })
 })
 
@@ -129,7 +132,7 @@ BluesoftBank.elements.buttonLogout.addEventListener('click', () => {
         toast: true,
         showConfirmButton : false,
         showCloseButton : false,
-        timer : 800,
+        timer : 500,
         timerProgressBar:true
         
     })

@@ -12,6 +12,7 @@
     <script async src="./frontend/js/modules/profile.js"></script>
     <script async src="./frontend/js/modules/products.js"></script>
     <script async src="./frontend/js/modules/transactions.js"></script>
+    <script async src="./frontend/js/modules/movements.js"></script>
     <script async src="./frontend/js/modules/documents.js"></script>
     <script async src="./frontend/js/app.js"></script>
     <!-- Importaciones Externas -->
@@ -116,13 +117,13 @@
                                 </div>
                                 <!-- <i class='bx bxs-plus-circle'></i> -->
                             </div>
-                            <div>
+                            <!-- <div>
                                 <h3>Inversiones</h3>
                                     <a href="#" id="app-products-askFor-investment">Solicitar Inversión</a>
                                 <div id="app-mainsection-products-accountList">
                                 </div>
-                                <!-- <i class='bx bxs-plus-circle'></i> -->
-                            </div>
+                                <i class='bx bxs-plus-circle'></i>
+                            </div> -->
                         </div>
 
                     </section>
@@ -131,7 +132,6 @@
                         <div class="app_mainsection_bar">
                             <select name="" id="app-mainsection-transactions-filterAccount" class="form-control">
                                 <option value="">Seleccione una Cuenta</option>
-                                <option value="">ahorros - 01255645</option>
                             </select>
                             <!-- <select name="" id="app-mainsection-transactions-filterTransaction"" class="form-control">
                                 <option value="">Seleccione un documento</option>
@@ -147,13 +147,12 @@
                     </section>
                     <section id="app-mainsection-movements" class="app_mainsection_profile">
                         <h2>Movimientos</h3>
-                        <div class="app-mainsection-bar">
-                            <select name="" id="app-mainsection-transactions-filterAccount" class="form-control">
+                        <div class="app_mainsection_bar">
+                            <select name="" id="app-mainsection-movements-filterAccount" class="form-control">
                                 <option value="">Seleccione una Cuenta</option>
-                                <option value="">ahorros - 01255645</option>
                             </select>
                             <select name="" id="app-mainsection-transactions-filterTransaction"" class="form-control">
-                                <option value="">Seleccione tipo de Movimiento</option>
+                                <option value="">Seleccione Tipo Movimiento</option>
                                 <option value="">Todos</option>
                                 <option value="">Ingresos</option>
                                 <option value="">Egresos</option>
@@ -261,11 +260,10 @@
                     <section id="app-mainsection-documents" class="app_mainsection_profile">
                         <h2>Documentos</h3>
                         <div class="app_mainsection_bar">
-                            <select name="" id="app-mainsection-transactions-filterAccount" class="form-control">
+                            <select name="" id="app-mainsection-documents-filterAccount" class="form-control">
                                 <option value="">Seleccione una Producto</option>
-                                <option value="">ahorros - 01255645</option>
                             </select>
-                            <select name="" id="app-mainsection-transactions-filterTransaction"" class="form-control">
+                            <select name="" id="app-mainsection-documents-documentType" class="form-control">
                                 <option value="">Seleccione un documento</option>
                                 <option value="">Certificación Bancaria</option>
                                 <option value="">Extracto Mes</option>

@@ -223,7 +223,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 80%;
+    height: 60%;
     gap: 30px;
     background-color: none;
 }
@@ -356,7 +356,7 @@ body{
 
 .app_mainsection_bar {
     text-align: center;
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: center;
     padding: 20px;
