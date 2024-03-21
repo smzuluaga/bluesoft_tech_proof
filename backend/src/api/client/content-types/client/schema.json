@@ -35,7 +35,6 @@
     "ciudad": {
       "type": "enumeration",
       "required": true,
-      "unique": false,
       "enum": [
         "medellin",
         "bogota",
@@ -83,7 +82,8 @@
     },
     "cuentas": {
       "type": "json",
-      "required": true
+      "required": true,
+      "default" : []
     },
     "email": {
       "type": "string",

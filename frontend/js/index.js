@@ -21,9 +21,9 @@ const Login =
         loginButton : document.getElementById("jlogin-databutton"),
         registerButton : document.getElementById("jlogin-register-button"),
         loginApprovation : false,
-        url : 'https://bluesoft-backend.onrender.com/api',
+        // url : 'https://bluesoft-backend.onrender.com/api',
+        url : 'http://localhost:1337/api',
         token: '57b45774267102906a1acb8c29932fada85139149acb75e28dd26df946d52c225f7328159cea7447da70a1392c31aa731f44f27f6a2a455b4160d1bfe2bc0733cf5dcc587bb15eee0ba3ebc5911eacf45ec8ada3ee2a1d40507ee1d4e391488132c9c8ea3dc01255bf11f721a0ef0b739be459904431c0aeb04cf37d6a1f5ac0'
-        // url : 'http://localhost:1337/api',
     },
     methods:
     {
@@ -103,7 +103,7 @@ const Login =
                 html : `
                 <form action="" class="jlogin_register_form">
                     <div class="form-nombre" class>
-                        <label for="login-form-nombre" class="form-label">Nombre</label>
+                        <label for="login-form-nombre" class="form-label" required>Nombre</label>
                         <input type="text" id="login-form-nombre" class="form-control">
                     </div>
                     <div class="form-apellidos" class>
@@ -194,14 +194,35 @@ const Login =
                                 "cel" : cel.value,
                                 "email" : email.value,
                                 "clave" : clave.value,
-                                "tipoDocumento" : tipoDocumento.value,
+                                "tipo_documento" : tipoDocumento.value,
                                 "documento" : documento.value,
-                                "tipocliente" : tipoCliente.value,
+                                "tipo_cliente" : tipoCliente.value,
                                 "cuentas" : []
                             }
                         }
 
                         console.log(register);
+                        console.log(!register.data.nombre);
+                        console.log(register.data.apellidos);
+                        console.log(register.data.nombre);
+                        console.log(register.data.direccion);
+                        console.log(register.data.cel);
+                        console.log(register.data.email);
+                        console.log(register.data.tipo_documento);
+                        console.log(register.data.documento);
+                        console.log(register.data.tipo_cliente);
+
+                        if(!register.data.nombre ||
+                            !register.data.apellidos ||
+                            !register.data.direccion ||
+                            !register.data.cel ||
+                            !register.data.email ||
+                            !register.data.clave ||
+                            !register.data.tipo_documento ||
+                            !register.data.documento ||
+                            !register.data.tipo_cliente){
+                                throw new Error("Diligencie Todos los Campos Obligatorios")
+                            }
 
                         const url = `${Login.elements.url}/clients`;
                         const token = Login.elements.token;
@@ -215,18 +236,44 @@ const Login =
                             body : JSON.stringify(register)
                         })
                         .then( async(data) => {
-                            console.log(data);
-                            alert("usuario Registrado")
-                            return data
-                        }
 
-                        )
+                            console.log(data);
+
+                            swal.fire({
+                                title: "Usuario Registrado",
+                                icon: "success",
+                                toast: true,
+                                showCloseButton: true,
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                            });
+                            return data
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            swal.fire({
+                                title: "Error en el Registro",
+                                icon: "warning",
+                                toast: true,
+                                showCloseButton: true,
+                                showCancelButton: false,
+                                showConfirmButton: false,
+                            });
+                        });
                         
                         
                         return userRegistered;
                     }
                 }catch (err){
                     console.log(err);
+                    swal.fire({
+                        title: "Error en El Registro",
+                        icon: "warning",
+                        toast: true,
+                        showCloseButton: true,
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                    });
                 }
             });
         }

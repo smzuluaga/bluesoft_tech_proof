@@ -473,7 +473,7 @@ export interface ApiClientClient extends Schema.CollectionType {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'persona_natural'>;
-    cuentas: Attribute.JSON & Attribute.Required;
+    cuentas: Attribute.JSON & Attribute.Required & Attribute.DefaultTo<[]>;
     email: Attribute.String & Attribute.Required & Attribute.Unique;
     accounts: Attribute.Relation<
       'api::client.client',
