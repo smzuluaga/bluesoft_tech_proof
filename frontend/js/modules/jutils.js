@@ -91,6 +91,8 @@ const JUtils = {
         },
         renderSelectOptions : async function(place) {
 
+            place.innerHTML = "";
+
             const BlueStorage = await JSON.parse(localStorage.getItem('BlueStorage'))
             const owner_id = BlueStorage.usuarioSesion.id;
 
@@ -108,6 +110,10 @@ const JUtils = {
 
                 const options = data.data;
 
+                const empty = document.createElement('option');
+                empty.innerHTML = "Seleccionar Cuenta"
+                place.appendChild(empty)
+
                 for (let option of options){
 
                     const { numero, tipo_cuenta } = option.attributes;
@@ -118,7 +124,6 @@ const JUtils = {
 
                     place.appendChild(selectOption);
                 }
-                console.log(options);
             });
 
 

@@ -33,6 +33,7 @@ const BluesoftBank = {
             BluesoftBank.sections.profile.style.display = 'none';
             BluesoftBank.sections.products.style.display = 'none';
             BluesoftBank.sections.transactions.style.display = 'none';
+            BluesoftBank.sections.movements.style.display = 'none';
             BluesoftBank.sections.documents.style.display = 'none';
         },
         setDate : function () {
@@ -88,7 +89,7 @@ BluesoftBank.elements.buttonTransactions.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        Button : false,
+        showCloseButton : false,
         timer : 500,
     })
 })
@@ -104,7 +105,7 @@ BluesoftBank.elements.buttonMovements.addEventListener('click', () => {
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        Button : false,
+        showCloseButton : false,
         timer : 500,
     })
 })

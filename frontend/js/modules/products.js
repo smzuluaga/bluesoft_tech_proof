@@ -1,8 +1,8 @@
 const Products = {
     elements : {
         buttonAskForAccount : document.getElementById("app-products-askFor-account"),
-        buttonAskForInvestment : document.getElementById("app-products-askFor-investment"),
         accountContainer : document.getElementById('app-mainsection-products-accountList'),
+        // buttonAskForInvestment : document.getElementById("app-products-askFor-investment"),
     },
     methods: {
         requestAccount : function () {
@@ -73,7 +73,6 @@ const Products = {
                 if(result.isConfirmed) {
 
                     try{
-
                         
                         const formTipoCuenta = document.getElementById('accountRequest-form-tipoCuenta');
                         const formNumeroCuenta = document.getElementById('accountRequest-form-numeroCuenta');
@@ -195,6 +194,7 @@ const Products = {
                             if(response.isConfirmed){
                                 BluesoftBank.methods.hideAllSections();
                                 BluesoftBank.sections.transactions.style.display = 'flex';
+                                Transactions.elements.selectAccount.value = account.attributes.numero;
                             }
                         });
                     })
@@ -205,8 +205,6 @@ const Products = {
                 }
 
             });
-
-            console.log(accounts);
 
         },
     }
@@ -219,14 +217,14 @@ Products.elements.buttonAskForAccount.addEventListener('click', (e) => {
     
 });
 
-Products.elements.buttonAskForInvestment.addEventListener('click', () => {
-    swal.fire({
-        title: "En Construcción",
-        text: "Aquí podrás solicitar tus inversiones muy pronto.",
-        icon: 'warning',
-        toast : 'true',
-        showConfirmButton: false,
-        timer : 1000,
-        timerProgressBar: true
-    });
-});
+// Products.elements.buttonAskForInvestment.addEventListener('click', () => {
+//     swal.fire({
+//         title: "En Construcción",
+//         text: "Aquí podrás solicitar tus inversiones muy pronto.",
+//         icon: 'warning',
+//         toast : 'true',
+//         showConfirmButton: false,
+//         timer : 1000,
+//         timerProgressBar: true
+//     });
+// });
