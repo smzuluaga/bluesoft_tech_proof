@@ -396,7 +396,11 @@ export interface ApiAccountAccount extends Schema.CollectionType {
       'api::account.account',
       'oneToMany',
       'api::movimiento.movimiento'
-    >;
+    > &
+      Attribute.DefaultTo<[]>;
+    oficima: Attribute.Enumeration<['medellin', 'bogota', 'cali', 'miami']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'medellin'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

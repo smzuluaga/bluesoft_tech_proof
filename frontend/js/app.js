@@ -2,7 +2,7 @@ let BlueStorage;
 
 window.onload = () => {
     BluesoftBank.methods.setDate();
-    BlueStorage = JSON.parce(localStorage.getItem('BlueStorage'));
+    BlueStorage = JSON.parse(localStorage.getItem('BlueStorage'));
 }
 
 
@@ -11,6 +11,7 @@ const BluesoftBank = {
         profile : document.getElementById('app-mainsection-profile'),
         products : document.getElementById('app-mainsection-products'),
         transactions : document.getElementById('app-mainsection-transactions'),
+        movements : document.getElementById('app-mainsection-movements'),
         documents : document.getElementById('app-mainsection-documents'),
     },
     elements : {
@@ -22,6 +23,7 @@ const BluesoftBank = {
         buttonProfile : document.getElementById('app-lateral-profile'),
         buttonProducts : document.getElementById('app-lateral-products'),
         buttonTransactions : document.getElementById('app-lateral-transactions'),
+        buttonMovements : document.getElementById('app-lateral-movements'),
         buttonDocuments : document.getElementById('app-lateral-documents'),
         buttonLogout : document.getElementById('app-lateral-logout'),
         profileTitle : document.getElementById('app-profile-profileTitle')
@@ -35,7 +37,6 @@ const BluesoftBank = {
         },
         setDate : function () {
             date = new Date;
-            console.log(date);
 
             BluesoftBank.elements.date.innerHTML = String(date).substring(0,21)
 
@@ -62,7 +63,9 @@ BluesoftBank.elements.buttonProfile.addEventListener('click', () => {
 })
 
 BluesoftBank.elements.buttonProducts.addEventListener('click', () => {
+
     BluesoftBank.methods.hideAllSections();
+    Products.methods.renderAccounts();
 
     BluesoftBank.sections.products.style.display = 'flex';
     swal.fire({
@@ -89,16 +92,31 @@ BluesoftBank.elements.buttonTransactions.addEventListener('click', () => {
     })
 })
 
+
+BluesoftBank.elements.buttonMovements.addEventListener('click', () => {
+
+    BluesoftBank.methods.hideAllSections();
+    BluesoftBank.sections.movements.style.display = 'flex';
+    swal.fire({
+        title : 'Movimientos',
+        icon : 'success',
+        toast: true,
+        showConfirmButton : false,
+        Button : false,
+        timer : 800,
+    })
+})
+
 BluesoftBank.elements.buttonDocuments.addEventListener('click', () => {
 
     BluesoftBank.methods.hideAllSections();
     BluesoftBank.sections.documents.style.display = 'flex';
     swal.fire({
-        title : 'Documento',
+        title : 'Documentos',
         icon : 'success',
         toast: true,
         showConfirmButton : false,
-        showCloseFutton : false,
+        showCloseButton : false,
         timer : 800,
     })
 })

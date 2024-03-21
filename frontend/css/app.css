@@ -157,6 +157,32 @@ body{
     color: var(--blue)
 }
 
+.app_mainsection_buttons{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.app_mainsection_buttons button{
+    text-decoration: none;
+    border: none;
+    width: 40%;
+    height: 30%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    border-radius: 10px;
+    color: white;
+    background-color: var(--blue);
+    font-size: 18px;
+}
+
+.app_mainsection_buttons button:hover{
+    background-color: var(--hoverBlue);
+    font-weight: 600;
+    width: 41%;
+    height: 31%;
+}
+
     /* PROFILE */
 .app_mainsection_profile {
     display: flex;
@@ -192,12 +218,14 @@ body{
     justify-content: flex-start;
 }
 
+
 .app_mainsection_products_list{
     display: flex;
     flex-direction: column;
     width: 90%;
     height: 80%;
     gap: 30px;
+    background-color: none;
 }
 
 .app_mainsection_products_list > div{
@@ -212,16 +240,25 @@ body{
     padding: 10px;
 }
 
+.app_mainsection_products_list > div a{
+    margin-bottom: 15px;
+}
+
+.app_mainsection_products_list > div:hover{
+    height: 120%;
+}
+
 .app_mainsection_products_list > div > div{
     box-sizing: border-box;
     width: 95%;
-    height: 80%;
+    height: 150%;
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
     gap: 15px;
     overflow-x: scroll;
 }
+
 
 .app_mainsection_products_list i{
     font-size: 20px;
@@ -230,12 +267,13 @@ body{
 
 .app_mainsection_products_account {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
     background-color: rgba(200,200,200,.5);
     min-width: 30%;
-    height: 100% ;
+    height: 95% ;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,.5);
     cursor: pointer;
@@ -245,11 +283,11 @@ body{
 .app_mainsection_products_account:hover {
     background-color: var(--hoverBlue);
     color: whitesmoke;
-    min-width: 40%;
     height: 90%;
     align-self: center;
     /* position:fixed */
 }
+
 
 .app_mainsection_products_list > div > div::-webkit-scrollbar {
     width:12px;
@@ -257,7 +295,7 @@ body{
 }
 
 .app_mainsection_products_list > div > div::-webkit-scrollbar-track {
-    background-color: rgba(250, 250, 250, 1);
+    background-color: rgba(255, 255 255, 1);
     width:12px;
     height: 12px;
     border-radius: 20px;
@@ -273,6 +311,21 @@ body{
     border-radius: 20px;
 }
 
+.app_form_account_info div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.app_form_account_info div span{
+    width: 50%;
+}
+
+.app_form_account_info div label{
+    color: var(--hoverBlue);
+}
     /* FORMULARIO SOLICITUD CUENTAS */
 .app_form_accountRequest {
     padding: 10px;
@@ -301,12 +354,17 @@ body{
 
     /* TRANSACCIONES    */
 
-.app-mainsection-transactions-bar {
-    width: 90%;
+.app_mainsection_bar {
+    text-align: center;
+    width: 50%;
     display: flex;
     justify-content: center;
     padding: 20px;
     gap: 20px
+}
+
+.app_mainsection_bar select{
+    text-align: center;
 }
 
 .app_mainsection_transactions_screen{
@@ -344,36 +402,11 @@ body{
     /* DOCUMENTOS    */
 
 .app_mainsection_documents_bar {
-    width: 90%;
+    width: 80%;
     height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     gap: 20px
-}
-
-
-.app_mainsection_documents_buttons{
-    width: 90%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-}
-.app_mainsection_documents_buttons button{
-    text-decoration: none;
-    border: none;
-    width: 40%;
-    height: 30%;
-    box-shadow: 0 2px 4px rgba(0,0,0,.5);
-    border-radius: 10px;
-    color: white;
-    background-color: var(--blue);
-}
-
-.app_mainsection_documents_buttons button:hover{
-    background-color: var(--hoverBlue);
-    font-weight: 600;
-    width: 41%;
-    height: 31%;
 }

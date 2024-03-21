@@ -40,7 +40,19 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::movimiento.movimiento",
-      "mappedBy": "account"
+      "mappedBy": "account",
+      "default": []
+    },
+    "oficima": {
+      "type": "enumeration",
+      "enum": [
+        "medellin",
+        "bogota",
+        "cali",
+        "miami"
+      ],
+      "required": true,
+      "default": "medellin"
     }
   }
 }
